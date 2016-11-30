@@ -1,16 +1,18 @@
-<template>
-  <div id="app">
-    <img src="../../assets/logo.png">
+<template lang="pug">
+  #home
+    h1 I'm the landing page
     <router-link to="/test1">Test 1</router-link>
     <router-link to="/test2">Test 2</router-link>
-    <router-view></router-view>
-  </div>
+    Hello
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  import Hello from '../Hello'
+  export default {
+    components: {
+      Hello
+    }
+  }
 </script>
 
 <style>
