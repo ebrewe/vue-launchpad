@@ -8,7 +8,6 @@ import './style/main.scss'
 Vue.use(VueRouter)
 
 const routes = [
-  {path: '/', component: Index},
   {path: '/test1', component: test1},
   {path: '/test2', component: test2}
 ]
@@ -21,5 +20,6 @@ const router = new VueRouter({
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router
+  router,
+  render: h => h(Index)
 })
