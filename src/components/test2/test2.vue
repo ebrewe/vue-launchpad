@@ -19,6 +19,7 @@
       tick () {
         var newNow = Date.now()
         this.time = newNow
+        this.$store.dispatch('changeTime', this.time)
         return window.requestAnimationFrame(this.tick)
       }
     }
