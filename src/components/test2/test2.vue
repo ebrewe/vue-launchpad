@@ -9,14 +9,20 @@
   export default {
     data () {
       return {
+        running: false,
         time: Date.now()
       }
     },
     mounted () {
+      this.running = true
       this.tick()
+    },
+    beforeDestroy () {
+      this.running = false
     },
     methods: {
       tick () {
+        if (!this.running) return false
         var newNow = Date.now()
         this.time = newNow
         this.$store.dispatch('changeTime', this.time)
